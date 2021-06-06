@@ -10,11 +10,11 @@ namespace Factory
 {
   public class Startup
   {
-    public Startup(IWebHostEnvironment env)
+   public Startup(IWebHostEnvironment env)
     {
       var builder = new ConfigurationBuilder()
-        .SetBasePath(env.ContentRootPath)
-        .AddJsonFiles("appsettings.json");
+          .SetBasePath(env.ContentRootPath)
+          .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -34,9 +34,9 @@ namespace Factory
       app.UseDeveloperExceptionPage();
       app.UseRouting();
 
-      app.UseEndpoints(route =>
+      app.UseEndpoints(routes =>
       {
-        routes.MapControllerRoute("default", "{controller=Home}/{id?}");
+        routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
 
       app.UseStaticFiles();
