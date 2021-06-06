@@ -77,7 +77,7 @@ Note: `[firstname_lastname]`, `[user id]`, and `[password]` should be replaced w
   
 
 ## Database Schema
-![Screenshot (123)](https://user-images.githubusercontent.com/76922718/119252777-d6363d00-bb62-11eb-8092-6743ddc072db.png)
+![FactoryDatabase](https://user-images.githubusercontent.com/76922718/120919090-a744be80-c66c-11eb-8343-0fdebf4f1868.png)
 
 ## Known Bugs
 
