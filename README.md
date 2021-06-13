@@ -55,7 +55,7 @@ Note: `[firstname_lastname]`, `[user id]`, and `[password]` should be replaced w
 
 ## Known Bugs
 
-* Currently no known issues.
+* Adding an Engineer to a machince throws out a SQL error.
 
 ## License
 
