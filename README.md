@@ -31,35 +31,9 @@ For this program, the user will be prompted to navigate towards a page for engin
 
 ## Setup/Installation Requirements
 
-   * Clone from repository (use: `$git clone https:github.com/JuanHasbunZem/HairSalon`)
+   * Clone from repository (use: `$git clone https:github.com/JuanHasbunZem/Factory.Solution`)
    * Once cloned on to your computer, access with GitBash / terminal
-   * Before anything, you will need to export the database. To do so, you will need to run the following commands in your MySQL command line:
-  ```
-  CREATE TABLE `juan_hasbun`.`engineers` (
-  `EngineerId` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(255) NULL,
-  `ContactInfo` VARCHAR(255) NULL,
-  `AvailHours` INT NULL,
-  PRIMARY KEY (`EngineerId`));``
-
-  ``CREATE TABLE `juan_hasbun`.`machines` (
-  `MachineId` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(255) NULL,
-  `Brand` VARCHAR(255) NULL,
-  `Description` VARCHAR(255) NULL,
-  PRIMARY KEY (`MachineId`));``
-
-  ``CREATE TABLE `engineermachine` (
-  `EngineerMachineId` int NOT NULL AUTO_INCREMENT,
-  `EngineerId` int NOT NULL,
-  `MachineId` int NOT NULL,
-  PRIMARY KEY (`EngineerMachineId`),
-  KEY `IX_EngineerMachine_EngineerId` (`EngineerId`),
-  KEY `IX_EngineerMachine_MachineId` (`MachineId`),
-  CONSTRAINT `FK_EngineerMachine_Engineers_EngineerId` FOREIGN KEY (`EngineerId`) REFERENCES `engineers` (`EngineerId`) ON DELETE CASCADE,
-  CONSTRAINT `FK_EngineerMachine_Machines_MachineId` FOREIGN KEY (`MachineId`) REFERENCES `machines` (`MachineId`) ON DELETE CASCADE);``
-  ```
-
+   * Before anything, you will need to build the database. To do so, you will need to run the following command: `dotnet ef database update`
   * Additionally, you will need to create an appsettings.json file and include the following within it:
   ```
   {
@@ -82,10 +56,6 @@ Note: `[firstname_lastname]`, `[user id]`, and `[password]` should be replaced w
 ## Known Bugs
 
 * Currently no known issues.
-
-## Future Updates
-
-* Add CSS stylings to clean up website.
 
 ## License
 
