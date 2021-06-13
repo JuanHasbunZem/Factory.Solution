@@ -18,11 +18,9 @@
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)<hr>
 
-  @Html.Label("Select Engineer")
-  @Html.DropDownList("EngineerId")
-
   <input type="submit" value="Save" />
 }
 
+<br>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Back Home", "Index", "Home")</p>

@@ -70,16 +70,19 @@ namespace Factory.Controllers
     }
     public ActionResult AddEngineer(int id)
     {
-      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
       return View(thisMachine);
     }
     [HttpPost]
-    public ActionResult AddEngineer(Machine machine, int EngineerId)
+    public ActionResult AddEngineer(Machine machine, int engineerId)
     {
-      if (EngineerId != 0)
-      {
-      _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      if (engineerId != 0)
+      { //Personal Note: Needed to find this line online, this checks to make sure you arent re-adding the same engineer
+        if (_db.EngineerMachine.Any(join => join.EngineerId == engineerId && join.MachineId == machine.MachineId ) == false)
+        {
+          _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineerId, MachineId = machine.MachineId });
+        }
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
